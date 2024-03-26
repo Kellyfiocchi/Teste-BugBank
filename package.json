@@ -1,0 +1,15 @@
+{
+  "name": "teste-bugbank",
+  "version": "1.0.0",
+  "description": "Este projeto contém testes automatizados desenvolvidos em Cypress para o site https://bugbank.netlify.app/. O BugBank é uma aplicação web fictícia que simula um banco de dados de bugs, permitindo aos usuários visualizar, adicionar e atualizar informações sobre bugs em projetos de software.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.7.1"
+  }
+}
