@@ -32,7 +32,7 @@ describe("Funcionalidade: Login", () => {
   });
 
   it("Não Deve Fazer Login - Nome de Usuário Inválido", () => {
-    loginPage.CredencialInvalida();
+    loginPage.EnterInvalidName();
     loginPage.enterPassword("admin");
     loginPage.clickLogin();
     loginPage.invalidCredentials();
