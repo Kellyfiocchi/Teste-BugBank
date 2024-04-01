@@ -10,8 +10,7 @@ O objetivo deste projeto é automatizar testes funcionais no OrangeHRM para gara
 
 - Login de usuário
 - Gestão de perfis
-- Gestão de folha de pagamento
-- Outras funcionalidades principais do OrangeHRM
+- Outras funcionalidades principais do OrangeHRM em Construção
 
 ## Estrutura do Projeto
 
