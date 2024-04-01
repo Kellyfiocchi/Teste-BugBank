@@ -32,8 +32,8 @@ describe("Funcionalidade: Login", () => {
   });
 
   it("Não Deve Fazer Login - Nome de Usuário Inválido", () => {
-    loginPage.enterUserName("InvalidUser123");
-    loginPage.enterPassword("admin123");
+    loginPage.CredencialInvalida();
+    loginPage.enterPassword("admin");
     loginPage.clickLogin();
     loginPage.invalidCredentials();
   });

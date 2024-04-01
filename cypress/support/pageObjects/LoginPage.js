@@ -17,25 +17,23 @@ export class LoginPage {
     "h6.oxd-text.oxd-text--h6.orangehrm-forgot-password-title[data-v-7b563373][data-v-18892c44]";
   login_forgot = ".orangehrm-login-forgot > .oxd-text";
 
-  // Steps
+  // Steps Login com sucesso
 
   visitHomePage() {
     cy.visit(
       "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     );
   }
-  enterUserName(username) {
-    cy.get('input.oxd-input[placeholder="Username"]').type(username);
+  enterUserName() {
+    cy.get('input[name="username"]').type("Admin");
   }
 
-  enterPassword(password) {
-    cy.get('input.oxd-input[type="password"][placeholder="Password"]').type(
-      password
-    );
+  enterPassword() {
+    cy.get('input[type="password"]').type("admin123");
   }
 
   clickLogin() {
-    cy.get('button.oxd-button[type="submit"].orangehrm-login-button').click();
+    cy.get('button[type="submit"]').click();
   }
 
   // Assertions
@@ -45,6 +43,12 @@ export class LoginPage {
       "contain",
       "Time at Work"
     );
+  }
+
+  // Steps Login com falha
+
+  CredencialInvalida() {
+    cy.get('input[name="username"]').type("Admi");
   }
 
   invalidCredentials() {
@@ -57,6 +61,7 @@ export class LoginPage {
     cy.get(".oxd-input-group > .oxd-text").should("contain", "Required");
   }
 
+  // Steps Reset Password
   clickForgotPassword() {
     cy.get(".orangehrm-login-forgot > .oxd-text").click();
   }
@@ -79,6 +84,7 @@ export class LoginPage {
     ).should("contain", "Reset Password link sent successfully");
   }
 
+  // Steps Clear Input Box
   loginClearInputBox() {
     cy.get(this.username_textbox).clear().get(this.password_textbox).clear();
   }
