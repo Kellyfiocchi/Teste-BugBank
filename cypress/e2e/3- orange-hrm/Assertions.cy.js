@@ -1,11 +1,14 @@
 /// <reference types="cypress" />
 
 describe("Testes de Assertivas", () => {
-  it("Assertivas implícitas", () => {
+  beforeEach(() => {
     cy.visit(
       "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     );
+  });
 
+  it("Assertivas implícitas", () => {
+   
     /*Validações do login de usuário*/
 
     /*1 - Validamos que a URL do login inclui o valor esperado| Palavras-chave: should - and*/
@@ -33,23 +36,16 @@ describe("Testes de Assertivas", () => {
     /*6 - Verifica a quantidade de links existentes no login */
     cy.get("input[placeholder='Username']").type("Admin"); //fornecer um valor para o input
     cy.get("input[placeholder='Username']").should("have.value", "Admin"); //valor
+
   });
 
   it("Assertivas explícitas", () => {
-    cy.visit(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    );
-
     cy.get('input[placeholder="Username"]').type("Admin");
     cy.get('input[placeholder="Password"]').type("admin123");
     cy.get('button[type="submit"]').click();
   });
 
   it("Assertivas explícitas - Login bem-sucedido", () => {
-    cy.visit(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    );
-
     cy.get('input[placeholder="Username"]').type("Admin");
     cy.get('input[placeholder="Password"]').type("admin123");
     cy.get('button[type="submit"]').click();
