@@ -1,15 +1,4 @@
 export class UserManagementPage {
-  // Locators
-
-  admin_menu_item = ":nth-child(1) > .oxd-main-menu-item > .oxd-text";
-  admin_add_btn = "button.oxd-button--primary";
-  user_role_txt =
-    ":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon";
-  user_role_arrowBtn = ".oxd-select-dropdown > :nth-child(2)";
-  user_role = ":nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-input";
-  user_password =
-    ".user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input";
-
   // Steps
 
   navigateToUserManagement() {

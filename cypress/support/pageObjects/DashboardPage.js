@@ -1,9 +1,4 @@
 export class DasDashboardPage {
-  // Locators
-
-  dashboard_txt = ":nth-child(8) > .oxd-main-menu-item";
-  SideMenu_Admin = ":nth-child(1) > .oxd-main-menu-item > .oxd-text";
-
   // Assertions
 
   clickSearch() {

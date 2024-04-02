@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>;
 import { faker } from "@faker-js/faker";
 import { LoginPage } from "../../support/pageObjects/LoginPage";
-import { DasDashboardPage } from "../../support/pageObjects/DashboardPage.cy";
+import { DasDashboardPage } from "../../support/pageObjects/DashboardPage";
 import { UserManagementPage } from "../../support/pageObjects/UserManagementPage";
 
 const loginPage = new LoginPage();
@@ -11,13 +11,12 @@ const userManagementPage = new UserManagementPage();
 describe("Gerenciamento de Usuários", () => {
   beforeEach(() => {
     loginPage.visitHomePage();
-    loginPage.enterUserName("Admin");
-    loginPage.enterPassword("admin123");
+    loginPage.enterUserName();
+    loginPage.enterPassword();
     loginPage.clickLogin();
-    dashboardPage.navigateToAdmin();
+    loginPage.LoginSuccessfully();
   });
-
-  it.only("Deve criar um novo usuário", () => {
+  it("Deve criar um novo usuário", () => {
     var nome = faker.internet.userName();
 
     userManagementPage.clickAddBtnUser();
