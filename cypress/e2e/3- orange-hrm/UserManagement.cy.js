@@ -15,10 +15,11 @@ describe("Gerenciamento de Usuários", () => {
     loginPage.enterPassword();
     loginPage.clickLogin();
     loginPage.LoginSuccessfully();
+    dashboardPage.navigateToAdmin();
   });
   it("Deve criar um novo usuário", () => {
     var nome = faker.internet.userName();
-
+    dashboardPage.navigateToAdmin();
     userManagementPage.clickAddBtnUser();
     userManagementPage.selectUserRole();
     userManagementPage.AutoCompleteUser();
@@ -37,6 +38,8 @@ describe("Gerenciamento de Usuários", () => {
     if (Cypress.mocha.getRunner().suite.suites.length === 3) {
       beforeEach(() => {});
     }
+
+    userManagementPage.AddName();
     userManagementPage.clickSearchbyname();
     userManagementPage.ValidName();
     dashboardPage.clickSearch();
@@ -46,7 +49,6 @@ describe("Gerenciamento de Usuários", () => {
     if (Cypress.mocha.getRunner().suite.suites.length === 3) {
       beforeEach(() => {});
     }
-
     userManagementPage.UserRole();
     userManagementPage.OptionUserRole();
     dashboardPage.clickSearch();
@@ -58,7 +60,6 @@ describe("Gerenciamento de Usuários", () => {
     if (Cypress.mocha.getRunner().suite.suites.length === 3) {
       beforeEach(() => {});
     }
-
     userManagementPage.UserRole();
     userManagementPage.OptionUserRoleESS();
     dashboardPage.clickSearch();
@@ -77,14 +78,13 @@ describe("Gerenciamento de Usuários", () => {
     dashboardPage.clickSearch();
     userManagementPage.validAdmin();
   });
-  it("Deve procurar usuario do sistema por Status", () => {
+  it.only("Deve procurar usuario do sistema por Status", () => {
     if (Cypress.mocha.getRunner().suite.suites.length === 3) {
       beforeEach(() => {});
     }
 
     dashboardPage.navigateToAdmin();
-    userManagementPage.Statusclick();
-    userManagementPage.OptionStatus2();
+    userManagementPage.StatusClick();
     dashboardPage.clickSearch();
     userManagementPage.validUserEnabled();
   });

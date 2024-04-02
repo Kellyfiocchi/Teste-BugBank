@@ -1,18 +1,22 @@
 export class UserManagementPage {
-  // Steps
+  // Steps add user
 
   navigateToUserManagement() {
-    cy.get(this.admin_menu_item).click();
+    cy.get('a[class="oxd-main-menu-item active"]').click();
   }
 
   clickAddBtnUser() {
-    cy.get(".orangehrm-header-container > .oxd-button").click();
+    cy.get(
+      'button[class="oxd-button oxd-button--medium oxd-button--secondary"]'
+    ).click();
   }
 
   selectUserRole() {
     cy.get(
       ":nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon"
     ).click();
+
+    cy.get(".oxd-select-dropdown > :nth-child(2)").click();
   }
 
   AutoCompleteUser() {
@@ -35,11 +39,8 @@ export class UserManagementPage {
     cy.get(
       ":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon"
     ).click();
-  }
-  OptionStatus2() {
-    cy.get(
-      ":nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon"
-    ).click();
+
+    cy.get(".oxd-select-dropdown > :nth-child(2)").click();
   }
 
   validUserEnabled() {
@@ -48,10 +49,12 @@ export class UserManagementPage {
     ).should("contain", "Enabled");
   }
 
-  Statusclick() {
+  StatusClick() {
     cy.get(
       ":nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon"
     ).click();
+
+    cy.get(".oxd-select-dropdown > :nth-child(2)").click();
   }
 
   InsertUsername(nome) {
@@ -82,6 +85,14 @@ export class UserManagementPage {
     cy.get(".oxd-toast").should("contain", "Successfully Saved");
   }
 
+  // Steps search user
+
+  AddName() {
+    cy.get(
+      ":nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input"
+    ).type("Admin");
+  }
+
   clickSearchbyname() {
     cy.get(":nth-child(2) > .oxd-input").type("Admin");
   }
@@ -106,9 +117,7 @@ export class UserManagementPage {
   }
 
   validAdmin() {
-    cy.get(
-      ".oxd-table-body > :nth-child(1) > .oxd-table-row > :nth-child(3) > div"
-    ).should("contain", "Admin");
+    cy.get(".oxd-autocomplete-text-input > input");
 
     cy.contains("div", /Admin/).should("exist");
   }
