@@ -38,6 +38,13 @@ describe("Funcionalidade: Login", () => {
     loginPage.invalidCredentials();
   });
 
+  it("Não Deve Fazer Login - Senha Inválida", () => {
+    loginPage.enterUserName("Admin");
+    loginPage.EnterInvalidPassword();
+    loginPage.clickLogin();
+    loginPage.invalidCredentials();
+  });
+
   it("Deve permitir redefinir senha", () => {
     loginPage.clickForgotPassword();
     loginPage.enterUserName("Admin");

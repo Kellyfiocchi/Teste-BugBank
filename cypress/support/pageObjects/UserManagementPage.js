@@ -6,9 +6,7 @@ export class UserManagementPage {
   }
 
   clickAddBtnUser() {
-    cy.get(
-      'button[class="oxd-button oxd-button--medium oxd-button--secondary"]'
-    ).click();
+    cy.get(".orangehrm-header-container > .oxd-button").click();
   }
 
   selectUserRole() {
@@ -76,9 +74,7 @@ export class UserManagementPage {
   }
 
   clickSaveBtn() {
-    cy.get(
-      "button.oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space"
-    ).click();
+    cy.get(".oxd-button--secondary").click();
   }
 
   verifyMessage() {
@@ -126,5 +122,11 @@ export class UserManagementPage {
     cy.get(
       ".oxd-table-body > :nth-child(1) > .oxd-table-row > :nth-child(3) > div"
     ).should("contain", "ESS");
+  }
+
+  RequiredFields() {
+    cy.get(
+      ":nth-child(1) > .oxd-grid-2 > :nth-child(1) > .oxd-input-group > .oxd-text"
+    ).should("contain", "Required");
   }
 }
