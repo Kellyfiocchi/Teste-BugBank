@@ -10,6 +10,7 @@ O objetivo deste projeto é automatizar testes funcionais no OrangeHRM para gara
 
 - Login de usuário
 - Gestão de perfis
+- Validação de campos obrigatórios
 - Outras funcionalidades principais do OrangeHRM em Construção
 
 ## Estrutura do Projeto
